@@ -1,0 +1,254 @@
+/* --- CẤU HÌNH GIAO DIỆN CHUNG --- */
+:root {
+    --bg-color: #050505;
+    --text-color: #e0e0e0;
+    --accent-color: #00ff41; 
+    --secondary-color: #008f11;
+    --nav-bg: rgba(10, 10, 10, 0.95);
+    --pixel-font: 'VT323', monospace;
+    --nav-height: 80px; /* Chiều cao thanh menu */
+}
+
+html {
+    /* QUAN TRỌNG: Giúp cuộn trang mượt mà */
+    scroll-behavior: smooth;
+    /* Giúp khi cuộn tới section không bị thanh menu che mất tiêu đề */
+    scroll-padding-top: calc(var(--nav-height) + 20px);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--pixel-font);
+    font-size: 20px;
+    padding-top: var(--nav-height); /* Đẩy nội dung xuống để không bị menu che */
+}
+
+/* Canvas nền */
+#code-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; opacity: 0.3;
+}
+
+/* --- TÙY CHỈNH TOPBAR (NAVBAR) --- */
+nav#navbar {
+    position: fixed; /* Ghim cứng trên đầu trang */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: var(--nav-bg);
+    border-bottom: 2px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+/* Phần bên trái: Ảnh + Tên */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Bo tròn ảnh */
+    overflow: hidden;
+    border: 2px solid var(--accent-color);
+}
+
+.profile-thumb img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.profile-role {
+    font-size: 16px;
+    color: var(--accent-color);
+}
+
+/* Phần giữa: Menu Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 22px;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fff;
+    background: rgba(0, 255, 65, 0.1);
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Phần bên phải: Nút Download */
+.btn-download {
+    background: var(--accent-color);
+    color: #000;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    background: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* --- CÁC SECTION NỘI DUNG --- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80vh; /* Giảm một chút để vừa vặn hơn */
+    padding: 0 100px;
+}
+
+.hero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 20px; }
+.highlight { color: var(--accent-color); text-shadow: 3px 3px 0 #000; }
+.typewriter { font-size: 30px; color: #fff; border-right: 2px solid var(--accent-color); animation: blink 0.75s step-end infinite; }
+.description { margin-top: 20px; color: #bbb; max-width: 500px; }
+
+/* Ảnh lớn ở phần Hero */
+.hero-img-large {
+    width: 350px; height: 350px;
+    border: 4px solid var(--accent-color);
+    box-shadow: 10px 10px 0 var(--secondary-color);
+    overflow: hidden;
+}
+.hero-img-large img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1); }
+
+/* Các Section phụ (About, Career...) */
+.content-section {
+    padding: 50px 100px;
+    border-left: 2px solid var(--secondary-color);
+    margin: 50px 100px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.content-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 40px;
+    border-bottom: 1px dashed #333;
+    display: inline-block;
+}
+
+/* Buttons */
+.btn-group { margin-top: 30px; }
+.btn { 
+    display: inline-block; padding: 10px 25px; 
+    border: 2px solid var(--accent-color); color: var(--accent-color); 
+    text-decoration: none; font-size: 24px; margin-right: 15px; 
+    box-shadow: 4px 4px 0 var(--secondary-color); transition: 0.2s; 
+}
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--secondary-color); }
+.btn-primary { background: var(--accent-color); color: #000; box-shadow: 4px 4px 0 #fff; }
+
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    nav#navbar { padding: 0 10px; height: auto; flex-wrap: wrap; }
+    .nav-links { display: none; /* Ẩn tạm menu trên mobile */ }
+    .hero { flex-direction: column-reverse; padding: 20px; text-align: center; }
+    .content-section { margin: 20px; padding: 20px; }
+    .hero-img-large { width: 250px; height: 250px; margin-bottom: 30px; }
+}
+
+
+/* --- PHẦN STYLE RIÊNG CHO MỤC RESUME --- */
+.resume-container {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.resume-col {
+    flex: 1; /* Chia đều 2 cột */
+}
+
+.resume-title {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 28px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.resume-item {
+    border-left: 2px solid var(--accent-color); /* Đường kẻ dọc màu xanh */
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Tạo chấm tròn ở đầu dòng timeline */
+.resume-item::before {
+    content: '';
+    position: absolute;
+    left: -6px; /* Căn chỉnh chấm tròn vào giữa đường kẻ */
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+.resume-item .time {
+    background: rgba(0, 255, 65, 0.1);
+    padding: 2px 8px;
+    font-size: 18px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.resume-item h4 {
+    margin: 10px 0 5px 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.resume-item p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* Responsive cho Resume trên điện thoại */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column; /* Xếp chồng lên nhau khi màn hình nhỏ */
+        gap: 20px;
+    }
+}
