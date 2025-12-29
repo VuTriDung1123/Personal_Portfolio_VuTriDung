@@ -339,3 +339,145 @@ nav#navbar {
 .gallery-item:hover img {
     filter: none; /* Hiển thị màu gốc khi hover */
 }
+
+/* Style cho Link trong phần Contact */
+.link-hover {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.link-hover:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
+    text-decoration: underline;
+}
+
+/* --- CAROUSEL STYLES --- */
+.carousel-title {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 24px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    /* Ẩn thanh cuộn nhưng vẫn cuộn được */
+    scrollbar-width: none; 
+}
+.carousel-container::-webkit-scrollbar { display: none; }
+
+.card {
+    min-width: 250px; /* Chiều rộng cố định của mỗi thẻ */
+    background: #000;
+    border: 1px solid var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 4px 4px 0px rgba(0, 143, 17, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.card-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-info h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Nút điều hướng Carousel */
+.nav-btn {
+    background: rgba(0,0,0,0.8);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    height: 100%;
+}
+.nav-btn:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+/* --- MODAL (POPUP) STYLES --- */
+.modal-overlay {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #111;
+    border: 2px solid var(--accent-color);
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 40px;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+/* Style cho nội dung trong Modal */
+.modal-title { color: var(--accent-color); font-size: 32px; margin-bottom: 20px; border-bottom: 1px dashed #555;}
+.modal-desc { color: #e0e0e0; margin-bottom: 20px; font-size: 22px; }
+.modal-tech { color: #aaa; margin-bottom: 20px; font-style: italic; }
+
+/* Grid ảnh trong Modal Gallery */
+.modal-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+.modal-gallery-grid img {
+    width: 100%; height: 150px; object-fit: cover;
+    border: 1px solid #333;
+}
