@@ -71,6 +71,7 @@ nav#navbar {
 .profile-info {
     display: flex;
     flex-direction: column;
+    line-height: 1.2;
     line-height: 1;
 }
 
@@ -81,24 +82,27 @@ nav#navbar {
 }
 
 .profile-role {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--accent-color);
+    white-space: nowrap;
 }
 
 /* Phần giữa: Menu Links */
 .nav-links {
     list-style: none;
     display: flex;
+    gap: 15px;
     gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #aaa;
-    font-size: 22px;
+    font-size: 18px;
     transition: 0.3s;
-    padding: 5px 10px;
+    padding: 5px 8px;
     border-radius: 4px;
+    white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -480,4 +484,70 @@ nav#navbar {
 .modal-gallery-grid img {
     width: 100%; height: 150px; object-fit: cover;
     border: 1px solid #333;
+}
+
+/* --- LANGUAGE SWITCHER --- */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--pixel-font);
+    font-size: 18px;
+    margin-left: 20px;
+    background: rgba(0,0,0,0.6);
+    padding: 5px 10px;
+    border: 1px solid var(--secondary-color);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-family: var(--pixel-font);
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    color: #fff;
+}
+
+/* Nút ngôn ngữ đang được chọn */
+.lang-btn.active-lang {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Ẩn menu mobile nếu màn hình nhỏ để chừa chỗ cho nút Lang */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .lang-switch { position: absolute; top: 20px; right: 20px; }
+}
+
+/* --- Style cho Tên phụ (Home) --- */
+.alt-names {
+    margin-bottom: 20px;
+    padding-left: 5px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.alt-names p {
+    font-size: 20px;
+    color: #aaa;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.alt-names .sub-label {
+    color: var(--accent-color); /* Màu xanh lá */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.alt-names .sub-value {
+    color: #fff;
+    font-style: italic;
 }

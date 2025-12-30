@@ -18,231 +18,260 @@
             </div>
             <div class="profile-info">
                 <span class="profile-name">Vũ Trí Dũng</span>
-                <span class="profile-role">Software Engineer</span>
+                <span class="profile-role" data-lang="role">Software Engineer</span>
             </div>
         </div>
 
         <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#certificates">Certificates</a></li> 
-            <li><a href="#career">Career Info</a></li>
-            <li><a href="#hobby">Hobby</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="active" data-lang="nav_home">Home</a></li>
+            <li><a href="#about" data-lang="nav_about">About</a></li>
+            <li><a href="#profile" data-lang="nav_profile">Profile</a></li>
+            <li><a href="#certificates" data-lang="nav_cert">Certificates</a></li>
+            <li><a href="#career" data-lang="nav_career">Career</a></li>
+            <li><a href="#hobby" data-lang="nav_hobby">Hobby</a></li>
+            <li><a href="#skills" data-lang="nav_skills">Skills</a></li>
+            <li><a href="#experience" data-lang="nav_exp">Experience</a></li>
+            <li><a href="#projects" data-lang="nav_proj">Projects</a></li>
+            <li><a href="#gallery" data-lang="nav_gallery">Gallery</a></li>
+            <li><a href="#contact" data-lang="nav_contact">Contact</a></li>
         </ul>
 
         <div class="nav-right">
-            <a href="#" class="btn-download">Download CV</a>
+            <div class="lang-switch">
+                <button onclick="changeLanguage('en')" class="lang-btn active-lang" id="btn-en">EN</button>
+                <span>|</span>
+                <button onclick="changeLanguage('vi')" class="lang-btn" id="btn-vi">VN</button>
+                <span>|</span>
+                <button onclick="changeLanguage('jp')" class="lang-btn" id="btn-jp">JP</button>
+            </div>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-text">
-            <h3>Xin chào, mình là</h3>
+            <h3 data-lang="hero_greeting">Xin chào, mình là</h3>
             <h1><span class="highlight">Vũ Trí Dũng</span></h1>
-            <p>I am a <span id="typing-text" class="typewriter"></span></p>
-            <p class="description">
+            <div class="alt-names">
+                <p>
+                    <span class="sub-label" data-lang="lbl_en_name">Tên tiếng Anh:</span> 
+                    <span class="sub-value">David Miller</span>
+                </p>
+                <p>
+                    <span class="sub-label" data-lang="lbl_jp_name">Tên tiếng Nhật:</span> 
+                    <span class="sub-value">Akina Aoi - 明菜青い</span>
+                </p>
+            </div>
+            <p><span data-lang="hero_iam">I am a</span> <span id="typing-text" class="typewriter"></span></p>
+            <p class="description" data-lang="hero_desc">
                 > Chào mừng đến với không gian số của tôi. Nơi dòng code gặp gỡ sự sáng tạo.
             </p>
             <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">Xem Project</a>
-                <a href="#contact" class="btn">Liên hệ</a>
+                <a href="#projects" class="btn btn-primary" data-lang="btn_view_project">Xem Project</a>
+                <a href="#contact" class="btn" data-lang="btn_contact">Liên hệ</a>
             </div>
         </div>
+        
         <div class="hero-img-large">
             <img src="pictures/VuTriDung.jpg" alt="Vũ Trí Dũng Large">
         </div>
     </section>
 
     <section id="about" class="content-section">
-        <h2>// About Me</h2>
-        <p>> Tôi là một lập trình viên đam mê công nghệ, luôn tìm tòi học hỏi những kỹ thuật mới để tối ưu hóa sản phẩm.</p>
-        <p>> Với tư duy logic và khả năng giải quyết vấn đề, tôi mong muốn tạo ra những ứng dụng có giá trị thực tế.</p>
+        <h2 data-lang="sec_about">// About Me</h2>
+        <p data-lang="about_line1">> Tôi là một lập trình viên đam mê công nghệ, luôn tìm tòi học hỏi những kỹ thuật mới để tối ưu hóa sản phẩm.</p>
+        <p data-lang="about_line2">> Với tư duy logic và khả năng giải quyết vấn đề, tôi mong muốn tạo ra những ứng dụng có giá trị thực tế.</p>
     </section>
 
     <section id="profile" class="content-section">
-        <h2>// User Profile</h2>
+        <h2 data-lang="sec_profile">// User Profile</h2>
         <div class="profile-container">
             <div class="profile-box">
-                <h3>[ Personal Info ]</h3>
+                <h3 data-lang="box_personal">[ Personal Info ]</h3>
                 <ul class="profile-list">
-                    <li><span class="label">Họ và tên:</span> <span class="value highlight">Vũ Trí Dũng</span></li>
-                    <li><span class="label">Sinh ngày:</span> <span class="value">23/11/2005</span></li>
-                    <li><span class="label">Tuổi:</span> <span class="value" id="auto-age">Loading...</span></li>
-                    <li><span class="label">Quốc tịch:</span> <span class="value">Việt Nam</span></li>
-                    <li><span class="label">Công việc:</span> <span class="value">Sinh viên</span></li>
+                    <li><span class="label" data-lang="lbl_name">Full Name:</span> <span class="value highlight">Vũ Trí Dũng</span></li>
+                    <li><span class="label" data-lang="lbl_dob">Birthday:</span> <span class="value">23/11/2005</span></li>
+                    <li><span class="label" data-lang="lbl_age">Age:</span> <span class="value" id="auto-age">Loading...</span></li>
+                    <li><span class="label" data-lang="lbl_nation">Nationality:</span> <span class="value" data-lang="val_nation">Vietnam</span></li>
+                    <li><span class="label" data-lang="lbl_job">Job:</span> <span class="value" data-lang="val_job">Student</span></li>
                 </ul>
             </div>
 
             <div class="profile-box">
-                <h3>[ Status & Lang ]</h3>
+                <h3 data-lang="box_status">[ Status & Lang ]</h3>
                 <ul class="profile-list">
-                    <li><span class="label">Địa chỉ:</span> <span class="value">TP. Hồ Chí Minh, VN</span></li>
-                    <li><span class="label">Ngôn ngữ:</span> <span class="value">Vietnamese, English</span></li>
-                    <li><span class="label">Trạng thái:</span> <span class="value highlight">Đang tìm kiếm cơ hội</span></li>
+                    <li><span class="label" data-lang="lbl_address">Address:</span> <span class="value" data-lang="val_address">Ho Chi Minh City, VN</span></li>
+                    <li><span class="label" data-lang="lbl_lang">Languages:</span> <span class="value" data-lang="val_lang">Vietnamese, English</span></li>
+                    <li><span class="label" data-lang="lbl_status">Status:</span> <span class="value highlight" data-lang="val_status">Open to work</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
-
     <section id="certificates" class="content-section">
-        <h2>// Certificates</h2>
-        <div class="profile-container">
-            
-            <div class="profile-box">
-                <h3>[ Foreign Languages ]</h3>
-                <ul class="profile-list">
-                    <li>
-                        <span class="label">English:</span> 
-                        <span class="value">IELTS 7.0 (2024)</span>
-                    </li>
-                    <li>
-                        <span class="label">Japanese:</span> 
-                        <span class="value">JLPT N3</span>
-                    </li>
-                    <li>
-                        <span class="label">Other:</span> 
-                        <span class="value">Basic Chinese Communication</span>
-                    </li>
-                </ul>
-            </div>
+        <h2 data-lang="sec_cert">// Certificates</h2>
 
-            <div class="profile-box">
-                <h3>[ Tech & Professional ]</h3>
-                <ul class="profile-list">
-                    <li>
-                        <span class="label">University:</span> 
-                        <span class="value">Software Engineering Degree (HUST)</span>
-                    </li>
-                    <li>
-                        <span class="label">Cloud:</span> 
-                        <span class="value highlight">AWS Certified Solutions Architect</span>
-                    </li>
-                    <li>
-                        <span class="label">Course:</span> 
-                        <span class="value">Fullstack Web Dev (Udemy)</span>
-                    </li>
-                    <li>
-                        <span class="label">Award:</span> 
-                        <span class="value">Hackathon 2023 - 2nd Place</span>
-                    </li>
-                </ul>
-            </div>
+        <h3 class="carousel-title" data-lang="cat_lang">[ Foreign Languages ]</h3>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollCarousel('lang-certs', -1)">&#10094;</button>
+            <div class="carousel-container" id="lang-certs">
+                
+                <div class="card" onclick="openCertModal('lang_1')">
+                    <img src="https://placehold.co/300x200/003366/fff?text=IELTS+7.0" alt="IELTS">
+                    <div class="card-info">
+                        <h4 id="title-lang_1">English: IELTS 7.0</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
+                    </div>
+                </div>
 
+                <div class="card" onclick="openCertModal('lang_2')">
+                    <img src="https://placehold.co/300x200/cc0000/fff?text=JLPT+N3" alt="JLPT">
+                    <div class="card-info">
+                        <h4 id="title-lang_2">Japanese: JLPT N3</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
+                    </div>
+                </div>
+
+                 <div class="card" onclick="openCertModal('lang_3')">
+                    <img src="https://placehold.co/300x200/ddaa00/000?text=Chinese" alt="Chinese">
+                    <div class="card-info">
+                        <h4 id="title-lang_3">Basic Chinese</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn next-btn" onclick="scrollCarousel('lang-certs', 1)">&#10095;</button>
+        </div>
+
+        <h3 class="carousel-title" style="margin-top: 40px;" data-lang="cat_tech">[ Tech & Professional ]</h3>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollCarousel('tech-certs', -1)">&#10094;</button>
+            <div class="carousel-container" id="tech-certs">
+                
+                <div class="card" onclick="openCertModal('tech_1')">
+                    <img src="https://placehold.co/300x200/000/00ff41?text=University+Degree" alt="Degree">
+                    <div class="card-info">
+                        <h4 id="title-tech_1">University Degree</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openCertModal('tech_2')">
+                    <img src="https://placehold.co/300x200/FF9900/000?text=AWS+Certified" alt="AWS">
+                    <div class="card-info">
+                        <h4 id="title-tech_2">AWS Solutions Arch</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openCertModal('tech_3')">
+                    <img src="https://placehold.co/300x200/A435F0/fff?text=Udemy+Cert" alt="Udemy">
+                    <div class="card-info">
+                        <h4 id="title-tech_3">Fullstack Web Dev</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
+                    </div>
+                </div>
+
+            </div>
+            <button class="nav-btn next-btn" onclick="scrollCarousel('tech-certs', 1)">&#10095;</button>
         </div>
     </section>
 
     <section id="career" class="content-section">
-        <h2>// Career Info</h2>
-        <p>> Định hướng trở thành một Senior Fullstack Developer trong 3 năm tới, chuyên sâu về các công nghệ Cloud Computing.</p>
+        <h2 data-lang="sec_career">// Career Info</h2>
+        <p data-lang="career_desc">> Định hướng trở thành một Senior Fullstack Developer trong 3 năm tới, chuyên sâu về các công nghệ Cloud Computing.</p>
     </section>
 
     <section id="hobby" class="content-section">
-        <h2>// Hobby</h2>
-        <p>> Coding, Gaming (League of Legends), Đọc sách công nghệ, Chạy bộ.</p>
+        <h2 data-lang="sec_hobby">// Hobby</h2>
+        <p data-lang="hobby_desc">> Coding, Gaming (League of Legends), Đọc sách công nghệ, Chạy bộ.</p>
     </section>
 
     <section id="skills" class="content-section">
-        <h2>// Skills</h2>
+        <h2 data-lang="sec_skills">// Skills</h2>
         <p>> HTML5, CSS3, JavaScript, ReactJS, NodeJS, MySQL, Git, Docker.</p>
     </section>
 
     <section id="experience" class="content-section">
-        <h2>// Experience</h2>
+        <h2 data-lang="sec_exp">// Experience</h2>
         <div class="profile-container">
             
             <div class="profile-box">
-                <h3>[ IT Experience ]</h3>
+                <h3 data-lang="box_it_exp">[ IT Experience ]</h3>
                 <ul class="profile-list">
                     <li>
-                        <span class="label">2023 - Nay:</span> 
-                        <span class="value highlight">Backend Dev (Cty ABC)</span>
+                        <span class="label" data-lang="exp_time_1">2023 - Present:</span> 
+                        <span class="value highlight" data-lang="exp_role_1">Backend Dev (ABC Corp)</span>
                     </li>
-                    <li style="display:block; font-size: 18px; color: #aaa; margin-top:-10px; margin-bottom: 15px;">
-                        > Phát triển API, tối ưu database...
-                    </li>
+                    <li class="exp-desc" data-lang="exp_desc_1">> Develop API, optimize database...</li>
                     
                     <li>
                         <span class="label">2022 - 2023:</span> 
-                        <span class="value">Intern Web (Cty XYZ)</span>
+                        <span class="value" data-lang="exp_role_2">Intern Web (XYZ Corp)</span>
                     </li>
-                    <li style="display:block; font-size: 18px; color: #aaa; margin-top:-10px; margin-bottom: 15px;">
-                        > Hỗ trợ fix bug, viết document...
-                    </li>
+                    <li class="exp-desc" data-lang="exp_desc_2">> Fix bugs, write documentation...</li>
                 </ul>
             </div>
 
             <div class="profile-box">
-                <h3>[ Non-IT Experience ]</h3>
+                <h3 data-lang="box_non_it_exp">[ Non-IT Experience ]</h3>
                 <ul class="profile-list">
                     <li>
                         <span class="label">2021 - 2022:</span> 
-                        <span class="value">Quản lý CLB Tình Nguyện</span>
+                        <span class="value" data-lang="exp_role_3">Volunteer Club Manager</span>
                     </li>
-                    <li style="display:block; font-size: 18px; color: #aaa; margin-top:-10px; margin-bottom: 15px;">
-                        > Kỹ năng lãnh đạo, tổ chức sự kiện.
-                    </li>
+                    <li class="exp-desc" data-lang="exp_desc_3">> Leadership, event organizing.</li>
 
                     <li>
                         <span class="label">2020:</span> 
-                        <span class="value">Freelance Translator</span>
+                        <span class="value" data-lang="exp_role_4">Freelance Translator</span>
                     </li>
-                    <li style="display:block; font-size: 18px; color: #aaa; margin-top:-10px; margin-bottom: 15px;">
-                        > Dịch tài liệu tiếng Anh - Việt.
-                    </li>
+                    <li class="exp-desc" data-lang="exp_desc_4">> English - Vietnamese translation.</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
     <section id="projects" class="content-section">
-        <h2>// Projects</h2>
+        <h2 data-lang="sec_proj">// Projects</h2>
         
-        <h3 class="carousel-title">[ University Projects ]</h3>
+        <h3 class="carousel-title" data-lang="cat_uni_proj">[ University Projects ]</h3>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollCarousel('uni-projects', -1)">&#10094;</button>
             <div class="carousel-container" id="uni-projects">
                 <div class="card" onclick="openProjectModal('uni_1')">
                     <img src="https://placehold.co/300x200/000/00ff41?text=Library+App" alt="Project">
                     <div class="card-info">
-                        <h4>Quản lý thư viện</h4>
-                        <p>Click xem chi tiết</p>
+                        <h4 id="title-uni_1">Quản lý thư viện</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
                     </div>
                 </div>
                 <div class="card" onclick="openProjectModal('uni_2')">
                     <img src="https://placehold.co/300x200/000/00ff41?text=E-Commerce" alt="Project">
                     <div class="card-info">
-                        <h4>Web Bán Hàng PHP</h4>
-                        <p>Click xem chi tiết</p>
+                        <h4 id="title-uni_2">Web Bán Hàng PHP</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
                     </div>
                 </div>
                 </div>
             <button class="nav-btn next-btn" onclick="scrollCarousel('uni-projects', 1)">&#10095;</button>
         </div>
 
-        <h3 class="carousel-title" style="margin-top: 40px;">[ Personal Projects ]</h3>
+        <h3 class="carousel-title" style="margin-top: 40px;" data-lang="cat_personal_proj">[ Personal Projects ]</h3>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollCarousel('personal-projects', -1)">&#10094;</button>
             <div class="carousel-container" id="personal-projects">
                 <div class="card" onclick="openProjectModal('per_1')">
                     <img src="https://placehold.co/300x200/000/fff?text=Portfolio" alt="Project">
                     <div class="card-info">
-                        <h4>Portfolio Website</h4>
-                        <p>Click xem chi tiết</p>
+                        <h4 id="title-per_1">Portfolio Website</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
                     </div>
                 </div>
                 <div class="card" onclick="openProjectModal('per_2')">
                     <img src="https://placehold.co/300x200/000/fff?text=Discord+Bot" alt="Project">
                     <div class="card-info">
-                        <h4>Discord Music Bot</h4>
-                        <p>Click xem chi tiết</p>
+                        <h4 id="title-per_2">Discord Music Bot</h4>
+                        <p data-lang="lbl_click_detail">Click for details</p>
                     </div>
                 </div>
             </div>
@@ -251,46 +280,46 @@
     </section>
 
     <section id="gallery" class="content-section">
-        <h2>// Gallery</h2>
+        <h2 data-lang="sec_gallery">// Gallery</h2>
 
-        <h3 class="carousel-title">[ IT Events / Hackathon ]</h3>
+        <h3 class="carousel-title" data-lang="cat_it_event">[ IT Events / Hackathon ]</h3>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollCarousel('it-gallery', -1)">&#10094;</button>
             <div class="carousel-container" id="it-gallery">
                 <div class="card" onclick="openGalleryModal('it_1')">
                     <img src="https://placehold.co/300x200/001100/00ff41?text=Hackathon+2023" alt="Event">
                     <div class="card-info">
-                        <h4>Hackathon 2023</h4>
-                        <p>Xem album ảnh</p>
+                        <h4 id="title-it_1">Hackathon 2023</h4>
+                        <p data-lang="lbl_view_album">Xem album ảnh</p>
                     </div>
                 </div>
                 <div class="card" onclick="openGalleryModal('it_2')">
                     <img src="https://placehold.co/300x200/001100/00ff41?text=FPT+Tech+Day" alt="Event">
                     <div class="card-info">
-                        <h4>FPT Tech Day</h4>
-                        <p>Xem album ảnh</p>
+                        <h4 id="title-it_2">FPT Tech Day</h4>
+                        <p data-lang="lbl_view_album">Xem album ảnh</p>
                     </div>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollCarousel('it-gallery', 1)">&#10095;</button>
         </div>
 
-        <h3 class="carousel-title" style="margin-top: 40px;">[ Life & Activities ]</h3>
+        <h3 class="carousel-title" style="margin-top: 40px;" data-lang="cat_life">[ Life & Activities ]</h3>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollCarousel('life-gallery', -1)">&#10094;</button>
             <div class="carousel-container" id="life-gallery">
                 <div class="card" onclick="openGalleryModal('life_1')">
                     <img src="https://placehold.co/300x200/000022/fff?text=Football" alt="Activity">
                     <div class="card-info">
-                        <h4>Giải bóng đá K16</h4>
-                        <p>Xem album ảnh</p>
+                        <h4 id="title-life_1">Giải bóng đá K16</h4>
+                        <p data-lang="lbl_view_album">Xem album ảnh</p>
                     </div>
                 </div>
                 <div class="card" onclick="openGalleryModal('life_2')">
                     <img src="https://placehold.co/300x200/000022/fff?text=Camping" alt="Activity">
                     <div class="card-info">
-                        <h4>Mùa hè xanh 2022</h4>
-                        <p>Xem album ảnh</p>
+                        <h4 id="title-life_2">Mùa hè xanh 2022</h4>
+                        <p data-lang="lbl_view_album">Xem album ảnh</p>
                     </div>
                 </div>
             </div>
@@ -307,11 +336,11 @@
     </div>
 
     <section id="contact" class="content-section" style="margin-bottom: 50px;">
-        <h2>// Contact Info</h2>
+        <h2 data-lang="sec_contact">// Contact Info</h2>
         <div class="profile-container">
             
             <div class="profile-box">
-                <h3>[ Direct Contact ]</h3>
+                <h3 data-lang="box_contact_direct">[ Direct Contact ]</h3>
                 <ul class="profile-list">
                     <li style="flex-direction: column; align-items: flex-start;">
                         <span class="label" style="width: 100%;">Email:</span>
@@ -331,7 +360,7 @@
             </div>
 
             <div class="profile-box">
-                <h3>[ Social Network ]</h3>
+                <h3 data-lang="box_social">[ Social Network ]</h3>
                 <ul class="profile-list">
                     <li>
                         <span class="label">LinkedIn:</span> 
